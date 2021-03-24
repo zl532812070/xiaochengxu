@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+		<meta name="format-detection"
+			content="telephone=no,email=no,date=no,address=no">
+		<title>天津考生高考志愿填报模拟器</title>
+		<link rel="stylesheet" type="text/css" href="../css/aui.2.0.css" />
+		<style type="text/css">
+			#con{
+				margin: 10px;
+				font-size: 24px; 
+			}
+			body{
+				background-color: #ffffff; 
+			}
+			ul{
+				margin-bottom: 10px;
+			}
+			ul li{ 
+				margin: 5px 10px;
+				padding: 5px;
+				color: #000;
+				word-wrap: break-word;
+			}
+			.section {
+			  text-indent: 25px;
+			}
+			.content{overflow-y:scroll;} 
+			.cancel{
+			    text-decoration: line-through
+			}
+	</style>
+	</head>
+	<body>
+		<div id="one">
+			<div id="content" class="content">
+				<div id="main">
+					<div class="aui-tips aui-margin-b-15" id="tips-1">
+				        <i class="aui-iconfont aui-icon-info"></i>
+				        <div class="aui-tips-title">仅限天津考生</div>
+				        <i></i>
+				    </div>
+					<div class="aui-content aui-margin-b-15">
+						<ul class="aui-list aui-list-in">
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-label">
+										科目
+									</div>
+									<div class="aui-list-item-input">
+										<label>
+											<input id="subject_wen" class="aui-radio" type="radio" name="subject" value="文科">
+											文科
+										</label>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										<label>
+											<input id="subject_li" class="aui-radio" type="radio" name="subject" value="理科">
+											理科
+										</label>
+									</div>
+								</div>
+							</li>
+							<li class="aui-list-item">
+								<div class="aui-list-item-inner">
+									<div class="aui-list-item-label">
+										预估分数
+									</div>
+									<div class="aui-list-item-input">
+										<input id="score" type="number" placeholder="请输入总分数" onblur="score_verify()">
+									</div>
+								</div>
+							</li>
+							<li class="aui-list-item" onclick="openLocationUI()">
+				                <div class="aui-list-item-inner aui-list-item-arrow">
+				                    <div class="aui-list-item-title">院校所在地</div>
+				                    <div class="aui-list-item-right" id="location_warn">
+				                        	至少选3项
+				                    </div>
+				                </div>
+				            </li><br/>
+							<li class="aui-list-header">
+								专业方向(至少选3项)
+							</li>
+							<li class="aui-list-item" style='margin:0px;padding-left:0px'>
+								<div class="aui-list-item-inner">
+									<ul id="category">
+									</ul>
+								</div>
+							</li>
+						</ul>
+						<div class="aui-content-padded">
+							<div class="aui-btn aui-btn-success aui-btn-block" onclick="formSubmit();">
+								结果查询
+							</div>
+						</div>
+					</div>
+					<div class="aui-content aui-margin-b-15">
+						<ul class="aui-list aui-media-list" id="one_universities" style="display: none">
+							<li class="aui-list-header">
+								一本校列表
+							</li>
+						</ul>
+						<ul class="aui-list aui-media-list" id="two_universities" style="display: none">
+							<li class="aui-list-header">
+								二本校列表
+							</li>
+						</ul>
+						<div class="aui-content-padded" style="display:none" id="payButton">
+							<!-- <div class="aui-btn aui-btn-success aui-btn-block" onclick="pay();" id="payButtonInfo">
+								￥2.99(<span class="cancel">原价￥10</span>)查阅详细版志愿表
+							</div> -->
+							<div class="aui-btn aui-btn-success aui-btn-block" onclick="pay();" id="payButtonInfo">
+								查阅详细信息
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div id="contact" style="display:none;margin: 12px 12px 12px 12px">
+					<div>
+						<div>关于项目</div><br>
+						<div>
+							<p class="section">志愿填报关系到每一个孩子的学业发展，以及将来的就业前景。科学填报能够让分数的价值最大化。</p>
+							<p class="section">津途教育学业生涯规划项目，一直致力于科学规划学生的学习和生活。有研究发现，学生绝大多数的学业问题，包括学习状态问题、学习效率问题、考试焦虑、早恋、游戏成瘾，都是由于缺少科学的学业规划导致的，而高考志愿填报项目，即是中学学业生涯规划的终点，又是大学学业生涯规划的起点，它有着重要的承上启下作用。</p>
+							<p class="section">志愿填报模拟器参考2000年以来各校招考分数，并悉心研究天津当年新版填报规则，通过大数据分析，精确计算出合理的志愿表，可供考生及家长参考。 </p><br/>
+							<p class="section">1.关注微信公众号《津途教育》。</p>
+							<p class="section">2.点击菜单栏“预约填报”。</p>
+							<p class="section">3.仔细阅读说明，点击进入链接，填写相关信息。</p>
+							<p class="section">4.3个工作日内，工作人员会与您电话联系相关事宜。</p>
+						</div><br/>
+						<p><div class="aui-btn aui-btn-success aui-btn-block" onclick="addUser()">点击预约志愿填报</div></p>
+						<br>
+					</div>
+				</div>
+			</div>
+			<footer class="aui-bar aui-bar-tab" id="footer">
+			<div class="aui-bar-tab-item aui-active" tapmode>
+				<i class="aui-iconfont aui-icon-home"></i>
+				<div class="aui-bar-tab-label">
+					首页
+				</div>
+			</div>
+			<div class="aui-bar-tab-item" tapmode>
+				<i class="aui-iconfont aui-icon-my"></i>
+				<div class="aui-bar-tab-label">
+					预约志愿填报专家
+				</div>
+			</div>
+			</footer>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/api.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/aui-tab.js"></script>
+	<script type="text/javascript" src="../js/aui-dialog.js" ></script>
+	<script type="text/javascript" src="../js/aui-toast.js" ></script>
+	<script type="text/javascript" src="../js/public.js?v=1"></script>
+	<script type="text/javascript" src="../js/index.js?v=1"></script>
+</html>

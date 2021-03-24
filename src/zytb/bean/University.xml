@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zytb.bean.University">
+
+	<resultMap type="University" id="universityResult">
+		<result property="id" column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+		<result property="name" column="name" jdbcType="VARCHAR" />
+		<result property="local_batch" column="local_batch" jdbcType="VARCHAR" />
+		<result property="create_university" column="create_university"
+			jdbcType="INTEGER" javaType="java.lang.Integer" />
+		<result property="attribute" column="attribute" jdbcType="VARCHAR" />
+		<result property="competent_department" column="competent_department"
+			jdbcType="VARCHAR" />
+		<result property="master_points" column="master_points"
+			jdbcType="VARCHAR" />
+		<result property="doctoral_points" column="doctoral_points"
+			jdbcType="VARCHAR" />
+		<result property="advantage_specialty" column="advantage_specialty"
+			jdbcType="VARCHAR" />
+		<result property="area" column="area" jdbcType="VARCHAR" />
+		<result property="address" column="address" jdbcType="VARCHAR" />
+		<result property="toTrain" column="toTrain" jdbcType="VARCHAR" />
+		<result property="suburb" column="suburb" jdbcType="VARCHAR" />
+		<result property="toTianJin" column="toTianJin" jdbcType="VARCHAR" />
+		<result property="characteristic" column="characteristic"
+			jdbcType="VARCHAR" />
+		<result property="remark" column="remark" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<select id="getUniversityInfo" resultMap="universityResult"
+		parameterType="list">
+		select * from university where name in
+		<foreach item="item" index="index" collection="list" open="("
+			separator="," close=")">#{item}
+ 		</foreach>
+	</select>
+
+</mapper>

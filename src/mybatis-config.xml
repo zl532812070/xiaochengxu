@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<typeAliases>  <!-- 给java类型取一个别名，方便在核心配置、映射配置中来使用这个java类型。其实mybatis给我们提供了很多内建的类型别名. -->
+		<typeAlias type="zytb.bean.University" alias="University" />
+		<typeAlias type="zytb.bean.University_filter" alias="University_filter" />
+		<typeAlias type="zytb.bean.LookUpCommon" alias="LookUpCommon" />
+		<typeAlias type="zytb.bean.User" alias="User" />
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="zytb/bean/University.xml" />
+		<mapper resource="zytb/bean/University_fiter.xml" />
+		<mapper resource="zytb/bean/User.xml" />
+	</mappers>
+
+</configuration>

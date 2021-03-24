@@ -1,0 +1,63 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="zytb:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/zytb_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="zytb" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="hk2-api-2.4.0-b31.jar" module-name="zytb" />
+          <element id="library" level="module" name="hk2-locator-2.4.0-b31.jar" module-name="zytb" />
+          <element id="library" level="module" name="hk2-utils-2.4.0-b31.jar" module-name="zytb" />
+          <element id="library" level="module" name="jackson-all-1.9.0.jar" module-name="zytb" />
+          <element id="library" level="module" name="javax.annotation-api-1.2.jar" module-name="zytb" />
+          <element id="library" level="module" name="javax.inject-2.4.0-b31.jar" module-name="zytb" />
+          <element id="library" level="module" name="javax.ws.rs-api-2.0.1.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-client.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-common.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-container-servlet-core.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-guava-2.21.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-media-multipart-2.17.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-server.jar" module-name="zytb" />
+          <element id="library" level="module" name="jersey-spring3-2.13.jar" module-name="zytb" />
+          <element id="library" level="module" name="mimepull-1.9.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-bridge-2.3.0-b10.jar" module-name="zytb" />
+          <element id="library" level="module" name="validation-api-1.1.0.Final.jar" module-name="zytb" />
+          <element id="library" level="module" name="mybatis-3.1.1.jar" module-name="zytb" />
+          <element id="library" level="module" name="mybatis-spring-1.1.1.jar" module-name="zytb" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.25-bin.jar" module-name="zytb" />
+          <element id="library" level="module" name="aopalliance.jar" module-name="zytb" />
+          <element id="library" level="module" name="aspectjrt.jar" module-name="zytb" />
+          <element id="library" level="module" name="aspectjweaver.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-dbcp.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-fileupload-1.2.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-io-2.4.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-logging-1.1.1.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-pool.jar" module-name="zytb" />
+          <element id="library" level="module" name="httpclient-4.5.2.jar" module-name="zytb" />
+          <element id="library" level="module" name="httpcore-4.4.4.jar" module-name="zytb" />
+          <element id="library" level="module" name="javassist-3.15.0-GA.jar" module-name="zytb" />
+          <element id="library" level="module" name="org.json.jar" module-name="zytb" />
+          <element id="library" level="module" name="org.springframework.aspects-3.1.0.M2.jar" module-name="zytb" />
+          <element id="library" level="module" name="org.springframework.orm-3.1.0.M2.jar" module-name="zytb" />
+          <element id="library" level="module" name="org.springframework.web-3.1.0.M2.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-aop-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-asm-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-beans-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-context-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-core-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-expression-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-jdbc-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="spring-tx-3.1.1.RELEASE.jar" module-name="zytb" />
+          <element id="library" level="module" name="commons-codec-1.8.jar" module-name="zytb" />
+          <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="zytb" />
+          <element id="library" level="module" name="xstream-1.4.jar" module-name="zytb" />
+          <element id="library" level="module" name="xmlpull-xpp3-1.1.4c.jar" module-name="zytb" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="zytb/web/Web" />
+      <element id="dir-copy" path="$PROJECT_DIR$/WebRoot" />
+    </root>
+  </artifact>
+</component>

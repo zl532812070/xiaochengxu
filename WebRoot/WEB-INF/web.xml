@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>restful</servlet-name>
+		<!--  jersey 2.x-->
+		<servlet-class>zytb.rest.filter.MyServletContainer</servlet-class>
+		<!--  发布的类所在包 -->
+		<!--  jersey 2.x 返回json-->
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>zytb.restApp.RestApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>restful</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>tokenPcFilter</filter-name>
+		<filter-class>zytb.rest.filter.TokenPcFilter</filter-class>
+		<init-param>
+			<param-name>exceptUrls</param-name>
+			<!-- 前端使用的是extjs，当upload的时候不能设置header，所以没有token参数，而是在前端判断了token -->
+			<param-value>/zytb/rest/user/login,/zytb/rest/user/user</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>tokenPcFilter</filter-name>
+		<url-pattern>/rest/user/*</url-pattern>
+	</filter-mapping>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>zytb.listener.InitListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+</web-app>
